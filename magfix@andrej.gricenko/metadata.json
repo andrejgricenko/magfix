@@ -1,0 +1,16 @@
+{
+  "description": "Magnifier cursor shift fix.",
+  "name": "Magfix",
+  "original-authors": [
+    "andrej.gricenko@gmail.com"
+  ],
+  "shell-version": [
+    "3.38.6",
+    "40",
+    "41",
+    "42"
+  ],
+  "url": "https://github.com/andrejgricenko/magfix",
+  "uuid": "magfix@andrej.gricenko",
+  "version": 1
+}

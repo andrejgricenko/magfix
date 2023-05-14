@@ -17,10 +17,8 @@ function enable() {
     _zoomRegions = Main.magnifier._zoomRegions;
     _mouseSprite = Main.magnifier._mouseSprite;
     createZoomRegion = Main.magnifier.createZoomRegion;
-    
-    Main.magnifier._zoomRegions = [];
 
-    eval(`Main.magnifier.createZoomRegion = function(xMagFactor, yMagFactor, roi, viewPort) {
+    Magnifier.Magnifier.prototype.createZoomRegion = (xMagFactor, yMagFactor, roi, viewPort) => {
         let zoomRegion = new ZoomRegion(this, this._cursorRoot);
         zoomRegion.setViewPort(viewPort);
 
@@ -32,7 +30,9 @@ function enable() {
 
         zoomRegion.addCrosshairs(this._crossHairs);
         return zoomRegion;
-    };`);
+    }
+    
+    Main.magnifier._zoomRegions = [];
 
     Main.magnifier._mouseSprite = new Clutter.Actor({ request_mode: Clutter.RequestMode.CONTENT_SIZE });
     Main.magnifier._mouseSprite.content = new Magnifier.MouseSpriteContent();
